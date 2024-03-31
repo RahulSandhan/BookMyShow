@@ -8,13 +8,13 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@Entity
+@Entity(name = "tickets")
 public class Ticket extends BaseModel{
     @ManyToOne
     private Movie movie;
     @ManyToOne
     private Show show;
-    @OneToMany
+    @OneToMany(mappedBy = "ticket")
     private List<ShowSeat> showSeats;
     @ManyToOne
     private User user;

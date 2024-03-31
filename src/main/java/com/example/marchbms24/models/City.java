@@ -9,10 +9,10 @@ import lombok.Setter;
 import java.util.List;
 
 @Data
-@Entity
+@Entity(name = "cities")
 public class City extends BaseModel{
     private String name;
-    @OneToMany
-    private List<Screen> screens;
+    @OneToMany(mappedBy = "city")
+    private List<Theatre> theatres;
 
 }
