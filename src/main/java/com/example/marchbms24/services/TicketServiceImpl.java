@@ -62,7 +62,7 @@ public class TicketServiceImpl implements TicketService{
              throw new InvalidBookTicketRequestException("Given seats dont belong the same show");
         }
 
-        List<ShowSeat> showSeats = this.showSeatRepository.findShowSeatsByIdInAndSeatStatus_AvailableAndShow(showSeatIds, show);
+        List<ShowSeat> showSeats = null;   //this.showSeatRepository.findShowSeatsByIdInAndSeatStatus_AvailableAndShow(showSeatIds, show);
         if(showSeats.size() != showSeatIds.size()){
              throw new SeatsUnavailableException("Some of the seats you are trying to book are unavailable");
         }
